@@ -28,3 +28,5 @@ jobs:
       with:
         name: coverage-report
         path: target/site/jacoco
+        if-no-files-found: ignore
+
