@@ -1,0 +1,4 @@
+#Fri May 30 09:54:38 ECT 2025
+configuration*?=650E6B0ED638EC1F17E78814A5EB6CC9F905CD7A
+module-resource*?\:checkstyle-suppressions.xml=5DBF0973F042A4238463D9CA71FC941E156B2AAC
+module-resource*?\:checkstyle-xpath-suppressions.xml=B6EAF0B8DB53EDD43E813DFD410A4BBA7FE34B88
