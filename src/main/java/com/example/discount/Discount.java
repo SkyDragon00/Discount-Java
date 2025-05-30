@@ -13,15 +13,15 @@ public class Discount {
      * @return Precio con descuento aplicado.
      * @throws IllegalArgumentException si cost < 0 o percent fuera de [0,100].
      */
-    public static double applyDiscount(double cost, double percent) {
-        if (cost < 0) {
-            throw new IllegalArgumentException("Cost must be non-negative.");
-        }
-        if (percent < 0 || percent > 100) {
-            throw new IllegalArgumentException("Percent must be between 0 and 100.");
-        }
-        return cost * (1 - percent / 100);
+public static double applyDiscount(double cost, double percent) {
+    if (cost < 0) {
+        throw new IllegalArgumentException("Cost must be non-negative.");
     }
+    if (percent < 0 || percent > 100) {
+        throw new IllegalArgumentException("Percent must be between 0 and 100.");
+    }
+    return cost * (1 - percent / 100);
+}
 
     /**
      * Retorna el precio tras aplicar un descuento fijo.

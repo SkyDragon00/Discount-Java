@@ -80,4 +80,11 @@ class DiscountTest {
             printed.contains("después de aplicar el descuento (porcentaje) es: $85.00")
         );
     }
+
+    @Test
+    void testApplyAccumulatedDiscountPercentTooLarge() {
+        assertThrows(IllegalArgumentException.class,
+            () -> Discount.applyAccumulatedDiscount(50, 150, 0));
+    }
+
 }
