@@ -23,7 +23,17 @@ jobs:
     - name: Build, test & generate reports
       run: mvn clean verify
 
+    - name: Check for coverage report
+      id: coverage_check
+      run: |
+        if [ ! -d target/site/jacoco ]; then
+          echo "found=false" >> $GITHUB_OUTPUT
+        else
+          echo "found=true" >> $GITHUB_OUTPUT
+        fi
+
     - name: Upload coverage report
+      if: steps.coverage_check.outputs.found == 'true'
       uses: actions/upload-artifact@v3
       with:
         name: coverage-report
