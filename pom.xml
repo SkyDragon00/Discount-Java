@@ -69,8 +69,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <!-- Puedes ajustar la configuración o usar google_checks.xml -->
                     <configLocation>google_checks.xml</configLocation>
+                    <outputFile>${project.build.directory}/checkstyle-result.xml</outputFile>
                     <failOnViolation>true</failOnViolation>
                 </configuration>
             </plugin>
@@ -88,6 +88,10 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <xmlOutput>true</xmlOutput>
+                    <xmlOutputFile>${project.build.directory}/spotbugs.xml</xmlOutputFile>
+                </configuration>
             </plugin>
         </plugins>
     </build>

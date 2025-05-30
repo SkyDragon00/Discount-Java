@@ -40,3 +40,19 @@ jobs:
         path: target/site/jacoco
         if-no-files-found: ignore
 
+    - name: Upload Checkstyle report
+      if: steps.coverage_check.outputs.found == 'true'
+      uses: actions/upload-artifact@v2
+      with:
+        name: checkstyle-report
+        path: target/checkstyle-result.xml
+        if-no-files-found: ignore
+
+    - name: Upload SpotBugs report
+      if: steps.coverage_check.outputs.found == 'true'
+      uses: actions/upload-artifact@v2
+      with:
+        name: spotbugs-report
+        path: target/spotbugs.xml
+        if-no-files-found: ignore
+
